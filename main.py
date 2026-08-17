@@ -10,10 +10,10 @@ from pyrogram import Client, filters
 
 from db import init_db, upsert_stat
 
-
-API_ID = ""        
-API_HASH = ""      
-TARGET_CHAT = ""    
+#Enter the data from the website https://my.telegram.org/apps
+API_ID = "API ID"        
+API_HASH = "API HASH"      
+TARGET_CHAT = "Telegram CHAT"    
 
 
 app = Client("my_userbot", api_id=API_ID, api_hash=API_HASH)
