@@ -125,8 +125,6 @@ def get_no_id_records(date_str=None):
 
 
 def get_records_by_date(date_str):
-    """Strictly fetch records matching the exact date only.
-    No cached/today default rows are appended; a different date returns nothing unrelated."""
     with db_connect() as cur:
         cur.execute(
             """
@@ -141,8 +139,6 @@ def get_records_by_date(date_str):
 
 
 def delete_record(record_id):
-    """Deletes a record from daily_stats by its primary key ID.
-    Returns the number of deleted rows (0 if the ID does not exist)."""
     with db_connect() as cur:
         cur.execute(
             "DELETE FROM daily_stats WHERE id = %s",
@@ -152,7 +148,6 @@ def delete_record(record_id):
 
 
 def get_keitaro_prefixes(delimiter="_"):
-    """Return distinct token_name prefixes (text before the first delimiter or '-')."""
     with db_connect() as cur:
         cur.execute("SELECT DISTINCT token_name FROM daily_stats")
         rows = cur.fetchall()
@@ -231,8 +226,6 @@ def delete_profile(profile_name):
 
 
 def get_records_by_profile(profile_name):
-    """Parse a profile's bound_records (JSON/list of IDs/names/dicts) and
-    return matching rows from daily_stats."""
     profile = get_profile_by_name(profile_name)
     if not profile:
         return []
