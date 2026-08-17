@@ -6,7 +6,7 @@ from datetime import datetime
 from typing import List
 from urllib.parse import unquote
 
-DB_URL = "
+DB_URL = "postgresql://postgres:[YOUR-PASSWORD]@db.syderyofyqrztvqsmmxl.supabase.co:5432/postgres"
 
 
 def get_connection():
