@@ -11,9 +11,9 @@ from pyrogram import Client, filters
 from db import init_db, upsert_stat
 
 
-API_ID = "34759545"        
-API_HASH = "a7e0d314ef9d90c1dedeae737930384d"      
-TARGET_CHAT = "@Nextems"    
+API_ID = ""        
+API_HASH = ""      
+TARGET_CHAT = ""    
 
 
 app = Client("my_userbot", api_id=API_ID, api_hash=API_HASH)
